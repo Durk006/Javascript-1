@@ -11,7 +11,7 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
-var modelName='XYZ';
+var modelName = 'XYZ';
 var duration = 0;
 
 
@@ -28,18 +28,16 @@ var duration = 0;
 
 // INSERT YOUR CODE HERE
 
-function recalculate(){
-    let total_price;
-    if (modelName == 'XYZ'){
-        total_price = duration * 100
-    }
-    else if (modelName == 'CPRG'){
-        total_price = duration * 213
-    }
-    else{
-        total_price = 0
-    }
-    document.getElementById("calculated-cost").innerHTML=total_price
+function recalculate() {
+	let total_price;
+	if (modelName == 'XYZ') {
+		total_price = duration * 100;
+	} else if (modelName == 'CPRG') {
+		total_price = duration * 213;
+	} else {
+		total_price = 0;
+	}
+	document.getElementById("calculated-cost").innerHTML = total_price;
 }
 
 
@@ -55,25 +53,24 @@ function recalculate(){
     - if modelName is currently "CPRG", change the value of modelName to "XYZ", and change the innerHTML of the model-text span element to "Model XYZ"
     - then, recalculate() the total cost.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
-    // modelButton.addEventListener("click", changeModel);
+// modelButton.addEventListener("click", changeModel);
 
 // INSERT YOUR CODE HERE
-var modelButton = document.getElementById("model-button")
-function changeModel(){
-    if (modelName == 'XYZ'){
-        modelName = 'CPRG'
-        document.getElementById("model-text").innerHTML='Model CPRG'
-    }
-    else if (modelName == 'CPRG'){
-        modelName = 'XYZ'
-        document.getElementById("model-text").innerHTML='Model XYZ'
-    }
-    else{
-        document.getElementById("model-text").innerHTML='Invalid Value'
-    }
-    recalculate()
+var modelButton = document.getElementById("model-button");
+
+function changeModel() {
+	if (modelName == 'XYZ') {
+		modelName = 'CPRG';
+		document.getElementById("model-text").innerHTML = 'Model CPRG';
+	} else if (modelName == 'CPRG') {
+		modelName = 'XYZ';
+		document.getElementById("model-text").innerHTML = 'Model XYZ';
+	} else {
+		document.getElementById("model-text").innerHTML = 'Invalid Value';
+	}
+	recalculate();
 }
-    modelButton.addEventListener("click",changeModel)
+modelButton.addEventListener("click", changeModel);
 
 
 
@@ -90,11 +87,11 @@ function changeModel(){
 */
 
 // INSERT YOUR CODE HERE
-var dur_button=document.getElementById("duration-button")
-function changeDuration(){
-    duration=prompt("The Duration is:")
-    document.getElementById("duration-text").innerHTML=duration
-    recalculate()
-}
-    dur_button.addEventListener("click",changeDuration)
+var dur_button = document.getElementById("duration-button");
 
+function changeDuration() {
+	duration = prompt("The Duration is:");
+	document.getElementById("duration-text").innerHTML = duration;
+	recalculate();
+}
+dur_button.addEventListener("click", changeDuration);
